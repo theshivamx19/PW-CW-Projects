@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #input-box {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="input-box" placeholder="Type Here...">
+    <button id="submit-btn">Submit</button>
+    <ul id="output-list"></ul>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const inputBox = document.getElementById('input-box');
+            const submitBtn = document.getElementById('submit-btn');
+            const outputList = document.getElementById('output-list');
+
+            submitBtn.addEventListener('click', function () {
+                const inputValue = inputBox.value;
+
+                if (inputValue.trim() !== '') {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = inputValue;
+                    outputList.appendChild(listItem);
+                    inputBox.value = '';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
